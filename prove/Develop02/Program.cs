@@ -12,35 +12,38 @@ class Program
         Console.WriteLine("Welcome Back!");
         Console.WriteLine("");
 
+        Console.WriteLine("Enter user name: ");
+        string userName = Console.ReadLine();
+        Journal journal = new Journal(userName); 
+
         while (true)
         {
-            
-
+        
             int userChoice = MainMenu();
 
             if (userChoice == 1)
             {
                 //New journal choice//
                 Console.WriteLine("");
-                Console.WriteLine("You got to choice 1");
+                journal.NewEntry();
             }
             else if (userChoice == 2)
             {
                 //Save journal choice//
                 Console.WriteLine("");
-                Console.WriteLine("You got to choice 2"); 
+                journal.SaveJournal(); 
             }
             else if (userChoice == 3)
             {
                 //Load journal choice//
                 Console.WriteLine("");
-                Console.WriteLine("You got to choice 3");
+                journal.LoadJournal();
             }
             else if (userChoice == 4)
             {
                 //Display journal choice//
                 Console.WriteLine("");
-                Console.WriteLine("You got to choice 4");
+                journal.DisplayAll();
             }
             else if (userChoice == 5)
             {
